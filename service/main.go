@@ -10,7 +10,7 @@ import (
 
 func main() {
 
-	cordinator := new(registery.NodeRegistery)
+	cordinator := registery.NewNodeRegistery()
 	rpc.Register(cordinator)
 
 	rpc.HandleHTTP()
@@ -21,10 +21,9 @@ func main() {
 
 	log.Println("Coordinator service started and listening the port 1234")
 
-	// this is a single thread by design
 	for {
 		conn, _ := l.Accept()
-		rpc.ServeConn(conn)
+		go rpc.ServeConn(conn)
 	}
 
 }
