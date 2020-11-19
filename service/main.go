@@ -5,7 +5,7 @@ import (
 	"net"
 	"net/rpc"
 
-	"../registery"
+	"github.com/korkmazkadir/coordinator/registery"
 )
 
 func main() {
