@@ -5,12 +5,12 @@ import (
 	"net"
 	"net/rpc"
 
-	"../coordinator"
+	"../registery"
 )
 
 func main() {
 
-	cordinator := new(coordinator.NodeCoordinator)
+	cordinator := new(registery.NodeRegistery)
 	rpc.Register(cordinator)
 
 	rpc.HandleHTTP()
