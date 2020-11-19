@@ -4,7 +4,7 @@ import "testing"
 
 func TestClient(t *testing.T) {
 
-	client := Client{IPAddress: "localhost", PortNumber: 1234}
+	client := Client{NetAddress: "localhost:1234"}
 	client.Connect()
 
 	nodes := []string{"node-1", "node-2", "node-3"}

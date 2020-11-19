@@ -1,21 +1,19 @@
 package registery
 
 import (
-	"fmt"
 	"log"
 	"net/rpc"
 )
 
 //Client deifnes a node coordinator client
 type Client struct {
-	IPAddress  string
-	PortNumber int
+	NetAddress string
 	client     *rpc.Client
 }
 
 //Connect rpc dials, if error occures panics
 func (c *Client) Connect() {
-	client, err := rpc.Dial("tcp", fmt.Sprintf("%s:%d", c.IPAddress, c.PortNumber))
+	client, err := rpc.Dial("tcp", c.NetAddress)
 	if err != nil {
 		panic(err)
 	}
