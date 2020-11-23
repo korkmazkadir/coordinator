@@ -39,5 +39,8 @@ func getHostName() string {
 		panic(err)
 	}
 
-	return hostname
+	log.Printf("WARNING: uses empty host name rather than %s \n", hostname)
+
+	//return hostname
+	return ""
 }
